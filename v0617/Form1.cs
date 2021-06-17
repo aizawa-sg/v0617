@@ -12,19 +12,43 @@ namespace v0617
 {
     public partial class Form1 : Form
     {
+        int vx = -10;
+        int vy = -10;
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        int vx=-10;
-        int vy=-10;
-
+    
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Top = vx;
-            label1.Left = vy;
+            label1.Top += vx;
+            label1.Left += vy;
+
+
+            if (label1.Left < 0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if (label1.Top < 0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if (label1.Left < 0)
+            {
+                vy = -Math.Abs(vy);
+            }
+            if (label1.Right > ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+            if (label1.Bottom > ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
+
 
         }
 
