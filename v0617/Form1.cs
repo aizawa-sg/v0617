@@ -24,8 +24,8 @@ namespace v0617
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Top += vx;
-            label1.Left += vy;
+            label1.Left+= vx;
+            label1.Top += vy;
 
 
             if (label1.Left < 0)
@@ -66,7 +66,7 @@ namespace v0617
 
         private void label1_Click(object sender, EventArgs e)
         {
-
+            timer1.Enabled = false;
         }
     }
 }
